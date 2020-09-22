@@ -1,0 +1,23 @@
+-------------------------------------------------------------------------------
+Test set: com.chemasmas.jaxrs.netbeanssesion1.resources.JavaEE8ResourceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.027 sec <<< FAILURE!
+com.chemasmas.jaxrs.netbeanssesion1.resources.JavaEE8ResourceTest.testPing()  Time elapsed: 0.026 sec  <<< FAILURE!
+java.lang.RuntimeException: java.lang.ClassNotFoundException: org.glassfish.jersey.internal.RuntimeDelegateImpl
+	at javax.ws.rs.ext.RuntimeDelegate.findDelegate(RuntimeDelegate.java:154)
+	at javax.ws.rs.ext.RuntimeDelegate.getInstance(RuntimeDelegate.java:121)
+	at javax.ws.rs.core.Response$ResponseBuilder.newInstance(Response.java:864)
+	at javax.ws.rs.core.Response.status(Response.java:592)
+	at javax.ws.rs.core.Response.status(Response.java:603)
+	at javax.ws.rs.core.Response.ok(Response.java:638)
+	at javax.ws.rs.core.Response.ok(Response.java:650)
+	at com.chemasmas.jaxrs.netbeanssesion1.resources.JavaEE8Resource.ping(JavaEE8Resource.java:17)
+	at com.chemasmas.jaxrs.netbeanssesion1.resources.JavaEE8ResourceTest.testPing(JavaEE8ResourceTest.java:27)
+Caused by: java.lang.ClassNotFoundException: org.glassfish.jersey.internal.RuntimeDelegateImpl
+	at java.lang.Class.forNameImpl(Native Method)
+	at java.lang.Class.forName(Class.java:337)
+	at javax.ws.rs.ext.FactoryFinder.newInstance(FactoryFinder.java:111)
+	at javax.ws.rs.ext.FactoryFinder.find(FactoryFinder.java:209)
+	at javax.ws.rs.ext.RuntimeDelegate.findDelegate(RuntimeDelegate.java:136)
+	... 26 more
+
