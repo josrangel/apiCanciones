@@ -7,10 +7,10 @@ import javax.ws.rs.core.Response;
 
 @Path("/cancion")
 public interface ServiciosCanciones {
-
     @GET
     @Consumes({MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_JSON})
+    //@Produces({MediaType.APPLICATION_XML})
     public Response all();
 
     @POST
@@ -18,6 +18,11 @@ public interface ServiciosCanciones {
     @Produces({MediaType.APPLICATION_JSON})
     public Response add(Cancion cancion);
 
+    @PUT
+    @Path("{id}")
+    @Consumes({MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
+    public Response update(@PathParam("id") int id,Cancion cancion);
 
     @GET
     @Path("{id}")
@@ -32,11 +37,11 @@ public interface ServiciosCanciones {
     @Produces({MediaType.APPLICATION_JSON})
     public Response deleteById(@PathParam("id") int id);
 
-    @PUT
-    @Path("{id}")
-    @Consumes({MediaType.APPLICATION_JSON})
-    @Produces({MediaType.APPLICATION_JSON})
-    public Response putById(@PathParam("id") int id, Cancion c);
+//    @PUT
+//    @Path("{id}")
+//    @Consumes({MediaType.APPLICATION_JSON})
+//    @Produces({MediaType.APPLICATION_JSON})
+//    public Response putById(int id, Cancion c);
 
     @GET
     @Path("buscar")
